@@ -4,9 +4,9 @@ const studyService = require("../services/studyService")
 class studyController {
 
     createThongTinHocPhan = (req, res) => {
-        const { maHocPhan, tietLyThuyet, tietThucHanh, batBuoc, hocTruoc, songHanh, tienQuyet } = req.body
+        const { maHocPhan, trangThai, tietLyThuyet, tietThucHanh, batBuoc, hocTruoc, songHanh, tienQuyet } = req.body
         console.log(batBuoc)
-        studyService.createThongTinHocPhan({ maHocPhan, tietLyThuyet, tietThucHanh, batBuoc, hocTruoc, songHanh, tienQuyet })
+        studyService.createThongTinHocPhan({ maHocPhan, trangThai, tietLyThuyet, tietThucHanh, batBuoc, hocTruoc, songHanh, tienQuyet })
             .then(ThongTinHocPhan => {
                 return res.status(201).json(ThongTinHocPhan)
             })

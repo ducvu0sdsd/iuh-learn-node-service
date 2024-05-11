@@ -10,7 +10,10 @@ const ThongTinHocPhan = new Schema({
         type: [{
             ngay: Number,
             tiet: String,
-            phong: String,
+            phong: {
+                maPhong: Number,
+                tenPhong: String
+            },
             giaoVien: {
                 maGiaoVien: Number,
                 tenGiaoVien: String
@@ -22,7 +25,10 @@ const ThongTinHocPhan = new Schema({
         type: [{
             ngay: Number,
             tiet: String,
-            phong: String,
+            phong: {
+                maPhong: Number,
+                tenPhong: String
+            },
             giaoVien: {
                 maGiaoVien: Number,
                 tenGiaoVien: String
@@ -50,7 +56,7 @@ const ThongTinHocPhan = new Schema({
     },
     trangThai: {
         type: String,
-        enum: ["Mở Lớp", "Đã Khóa"],
+        enum: ["Mở Lớp", "Đã Khóa", "Lên Kế Hoạch"],
         default: "Mở Lớp"
     }
 }, { timestamps: true })
