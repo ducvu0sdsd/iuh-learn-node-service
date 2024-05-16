@@ -1,5 +1,6 @@
 
 const ThongTinHocPhan = require('../models/thongTinHocPhan')
+const ThongTinHocTap = require("../models/thongTinHocTap")
 
 class studyService {
 
@@ -15,6 +16,14 @@ class studyService {
         return await ThongTinHocPhan.findByIdAndDelete(id)
     }
 
+    createThongTinHocTap = async (thongtin) => {
+        return await ThongTinHocTap.create(thongtin)
+    }
+
+    gelThongTinHocTapByMSSV = async (mssv) => {
+        console.log(mssv)
+        return await ThongTinHocTap.findOne({ mssv })
+    }
 }
 
 module.exports = new studyService

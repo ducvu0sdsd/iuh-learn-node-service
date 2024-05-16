@@ -36,6 +36,28 @@ class studyController {
             })
     }
 
+    createThongTinHocTap = (req, res) => {
+        const { mssv, hocPhanDaHoc } = req.body
+        studyService.createThongTinHocTap({ mssv, hocPhanDaHoc })
+            .then(ThongTinHocPhan => {
+                return res.status(201).json(ThongTinHocPhan)
+            })
+            .catch(error => {
+                console.log(error)
+            })
+    }
+
+    getThongTinHocTapByMSSV = (req, res) => {
+        const { mssv } = req.params
+        studyService.gelThongTinHocTapByMSSV(mssv)
+            .then(ThongTinHocTap => {
+                return res.status(201).json(ThongTinHocTap)
+            })
+            .catch(error => {
+                console.log(error)
+            })
+    }
+
 }
 
 module.exports = new studyController
